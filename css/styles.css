@@ -1,0 +1,771 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap');
+/* Define variables */
+:root {
+  --main-font: 'Barlow', sans-serif;
+  --primary-color: #F4F9F1;
+  --secondary-color: #92FFAB;
+  --tertiary-color: #4d8081;
+  --text-color: #282c45;
+  --link-color: #92FFAB;
+  --hover-color: #BDC5B9;
+  --background-color: #05090A;
+}
+
+body {
+    margin: 0;
+    font-family: var(--main-font);
+    background-color: var(--background-color);
+    line-height: 1.2; 
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    padding: 0 20px;
+    height: 71px;
+    flex-shrink: 0;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-items {
+    display: flex;
+  }
+  
+  .nav-item {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--primary-color);
+  }
+  
+  .nav-item:hover {
+    color: var(--link-color);
+  }
+  
+  /* Hides the burger menu on desktop */
+  .nav-toggle {
+    display: none;
+  }
+  
+  /* Responsive navigation */
+  @media (max-width: 768px) {
+    .nav-items {
+      display: none;
+    }
+    
+    .nav-items.active {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 71px; /* Adjusted to match the height of the navbar */
+      left: 0;
+      background-color: var(--tertiary-color);
+    }
+    
+    .nav-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 24px;
+      position: absolute;
+      top: 23.5px; /* Center vertically in the navbar */
+      right: 20px;
+    }
+  }
+
+  /* Font */
+  h1 {
+    font-family: var(--main-font);
+    font-size: 6.8em; 
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-family: var(--main-font);
+    font-size: 5em; /* 80px */
+    font-style: normal;
+    font-weight: 500;
+  }
+  
+  h3 {
+    font-family: var(--main-font);
+    font-size: 3em; /* 60px */
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  h4 {
+    font-family: var(--main-font);
+    font-size: 1.5em; /* 40px */
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  p {
+    font-family: var(--main-font);
+    font-size: 1.2em; /* 32px */
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  /* Responsive font sizes for mobile */
+  @media (max-width: 768px) {
+    :root {
+      font-size: 14px; /* Reducing the base font size for mobile */
+    }
+    
+    h1 {
+      font-size: 4em; /* Adjusted for mobile, originally 120px */
+    }
+  
+    h2 {
+      font-size: 2.5em; /* Adjusted for mobile, originally 80px */
+    }
+  
+    h3 {
+      font-size: 1.5em; /* Adjusted for mobile, originally 60px */
+    }
+  
+    h4 {
+      font-size: 1.5em; /* Adjusted for mobile, originally 40px */
+    }
+  
+    p {
+      font-size: 1.25em; /* Adjusted for mobile, originally 32px */
+    }
+  }
+
+  .hero {
+    background-image: url('../img/landing/hero.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 1200px; /* Fixed height for large screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px; /* Adjust the padding to position the text */
+  }
+
+  .hero-text {
+    color: white; /* Fallback color */
+    text-align: center;
+    margin: 0 0 30px; /* Space between text and buttons */
+    
+    /* Apply gradient to text */
+    background: -webkit-linear-gradient(#fff, #92FFAB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* For non-WebKit browsers */
+  }
+  
+
+  .hero-buttons {
+    display: flex; /* Align buttons in a row */
+    gap: 20px; /* Space between buttons */
+  }
+
+  .button {
+    padding: 15px 30px; /* Button padding */
+    font-size: 18px; /* Button text size */
+    color: var(--tertiary-color); /* Button text color */
+    background-color: var(--primary-color); /* Button background color */
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 5px solid var(--primary-color);
+  }
+
+  .button:hover {
+    background-color: var(--secondary-color);
+    border: 5px solid var(--secondary-color);
+  }
+
+  .button-secondary {
+    padding: 15px 30px; /* Button padding */
+    font-size: 18px; /* Button text size */
+    color: var(--primary-color); /* Button text color */
+    background: rgba(244, 249, 241, 0.20);
+    border: 5px solid var(--primary-color);
+    cursor: pointer;
+    border-radius: 100px;
+    text-decoration: none;
+  }
+
+  .button-secondary:hover {
+    background-color: var(--tertiary-color);
+  }
+
+  /* Make hero section responsive */
+  @media (max-width: 768px) {
+    .hero {
+      height: 800px; /* Responsive height */
+      padding-top: 50px; /* Adjusted padding for smaller screens */
+    }
+    .hero-buttons {
+      flex-direction: column; /* Stack buttons on mobile */
+      align-items: center;
+    }
+
+    .button,
+    .button-secondary {
+        padding: 10px 20px; /* Smaller padding for mobile */
+        font-size: 16px; /* Slightly smaller font size for mobile */
+      }
+
+  }
+
+  section {
+    color: var(--secondary-color);
+    margin: 60px 0 60px 60px; /* top, right, bottom, left */
+  }
+
+  section h3 {
+    max-width: 900px; /* Adjust the width as needed */
+    line-height: 1; /* Adjust line spacing */
+  }
+
+  section h4 {
+    margin-bottom: 10px; /* Reduce the bottom margin of h4 */
+    color: var(--primary-color);
+  }
+  
+  section h2 {
+    margin-top: 10px; /* Reduce the top margin of h2 */
+    color: var(--primary-color);
+  }
+
+  .full-width-image {
+    width: 100%; /* Full width relative to its parent */
+    overflow: hidden;
+  }
+  
+  .full-width-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  section {
+    margin: 40px 20px; /* Reduced and uniform margin for mobile screens */
+  }
+
+  section h3 {
+    max-width: none; /* Full width on smaller screens */
+    text-align: left; /* Adjust text alignment as needed */
+    line-height: 1.6; /* Slightly increased line height for mobile readability */
+    }
+  }
+  
+/* Add a container for the accordion */
+.accordion-container {
+  max-width: 100%; 
+  padding-left: 60px; 
+  padding-right: 60px; 
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.accordion-header {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-size: 3em; 
+}
+
+/* Styling for the <i> elements inside .accordion-header */
+.accordion-header i {
+  font-size: 0.5em; /* Adjust the font size of the icon */
+  color: var(--secondary-color); /* Set a specific color for the icon */
+  margin-right: 10px; /* Add some margin to the right of the icon */
+}
+
+.accordion-header:hover {
+  color: var(--secondary-color); 
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  color: var(--primary-color);
+  text-align: left;
+  margin-bottom: 60px;
+  max-width: 600px;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  margin-left: 20px;
+  color: var(--secondary-color);
+}
+
+/* Styling for the arrow icon inside the .arrow span */
+.arrow i {
+  font-size: 0.5em; 
+  color: inherit; 
+}
+
+.arrow.up {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .accordion-header {
+    padding: 15px; /* Increased padding for smaller screens */
+    font-size: 1.8em; /* Larger font size for better readability */
+  }
+
+  .accordion-content {
+    padding: 15px;
+    margin-bottom: 40px; /* Reduced margin for mobile screens */
+  }
+}
+
+
+.gallery-container {
+  display: flex;
+  align-items: center;
+}
+
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.gallery img {
+  max-width: 100%;
+  margin: 0 10px;
+  transition: transform 0.3s ease; /* Smooth transition for scale effect */
+}
+
+/* Scale up the image on hover */
+.gallery img:hover {
+  transform: scale(1.1); /* Increase the size of the image */
+  z-index: 10; /* Optionally, bring the image to the front */
+}
+
+
+/* Common styles for both buttons */
+.gallery-container button {
+  color: var(--tertiary-color); /* Button text color */
+  background-color: var(--primary-color); /* Button background color */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding around the text */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Align buttons in line */
+  font-size: 12px; /* Font size */
+  margin: 4px 2px; /* Margin around buttons */
+  cursor: pointer; /* Cursor changes to a pointer on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for both buttons */
+.gallery-container button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Countdown */
+.countdown-container {
+  text-align: center; /* Centers the content horizontally */
+  background-color: var(--primary-color);
+  padding: 100px 0; /* Top and bottom padding set to 200px, left and right padding set to 0 */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .countdown-container {
+    padding: 30px 0; /* Top and bottom padding set to 30px, left and right padding set to 0 */
+  }
+}
+
+/* Specific styles for the countdown paragraph */
+#countdown {
+  color: var(--secondary-color);
+  background-color: var(--tertiary-color);
+  margin-top: 10px; /* Reduced top margin */
+  margin-bottom: 10px; /* Reduced bottom margin */
+  display: inline-block;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 3em;
+}
+
+/* Adjust margins on the h2 element */
+.countdown-container h2 {
+  margin-bottom: 10px; /* Reduced bottom margin */
+}
+
+/* Adjust top margin for the h3 element */
+.countdown-container h3 {
+  margin-top: 0; /* Reduced to zero to bring h2 and h3 closer */
+}
+
+
+/* two columns */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.heading-preorder, .heading-title {
+  text-align: center;
+  width: 100%; /* Ensures the headings take full width */
+}
+
+.image-column, .text-column {
+  flex: 1;
+  max-width: 100%;
+  padding: 5px;
+}
+
+.text-column p {
+  margin-bottom: 50px;
+  color: var(--primary-color); /* Adjust the value to increase or decrease the space */
+}
+
+h4.price {
+  color: var(--secondary-color);
+}
+
+.image-column img {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .image-column, .text-column {
+      max-width: 100%;
+  }
+
+  .image-column img {
+      width: 80%; /* Adjust if needed */
+  }
+}
+
+/* Styles for the newsletter section */
+.newsletter-section {
+  padding: 20px;
+  text-align: center;
+  margin: 0;
+  background-color: var(--primary-color);
+  margin-left: auto; /* Center the section */
+  margin-right: auto; /* Center the section */
+}
+
+.newsletter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically (if needed) */
+  margin: 0;
+  padding: 20px;
+}
+
+.input-field {
+  padding: 10px;
+  width: 90%; /* Increase the width to make the input fields wider */
+  max-width: 400px;
+  border: 2px solid var(--tertiary-color);
+  border-radius: 20px;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-field, .send-button, .legal-text {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  padding: 10px;
+  width: 90%; /* Increase the width to make the input fields wider */
+  max-width: 400px;
+  border: 2px solid var(--tertiary-color);
+  border-radius: 20px;
+}
+
+.legal-text {
+  text-align: center;
+  font-size: 14px;
+  color: var(--tertiary-color);
+  display: flex;
+  justify-content: center; /* Center the content */
+  align-items: center; /* Align items vertically */
+  gap: 10px; /* Spacing between radio button and label */
+}
+
+.error-message {
+  color: red;
+  display: none;
+}
+
+.send-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  color: var(--primary-color);
+  background-color: var(--tertiary-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 100px;
+  text-decoration: none;
+  width: 200px;
+}
+
+.send-button:hover {
+  background-color: var(--text-color);
+}
+
+.newsletter-section p {
+  margin-bottom: 20px;
+}
+
+.newsletter-section a {
+  color: var(--tertiary-color);
+  text-decoration: none;
+}
+
+.newsletter-section a:hover {
+  color: var(--text-color);
+}
+
+.custom-radio {
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border: 2px solid var(--tertiary-color);
+  border-radius: 50%;
+}
+
+.custom-radio:checked {
+  background-color: var(--tertiary-color);
+}
+
+@media (max-width: 768px) {
+  .newsletter-section p {
+    text-align: center;
+  }
+}
+
+
+/* Footer Styles */
+.footer {
+  background-color: var(--tertiary-color); /* Dark background color */
+  color: #fff; /* Text color */
+  display: flex;
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+  padding: 20px;
+}
+
+.footer-column {
+  flex: 1;
+  margin: 10px;
+  text-align: left;
+}
+
+.logo {
+  width: 20%; /* Make the logo responsive */
+  max-width: 200px; /* Set a max width if needed */
+}
+
+.footer-column i {
+  font-size: 24px; /* Adjust the size as needed */
+  margin: 0 10px; /* This adds 10px margin on both sides of each icon */
+  color: var(--secondary-color);
+}
+
+
+/* Terms Styles */
+.terms {
+  background-color: var(--text-color); /* Dark background color */
+  color: var(--primary-color);
+  padding: 20px;
+  text-align: left;
+  font-size: 10px;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .footer {
+      flex-direction: column; /* Stack columns vertically */
+  }
+}
+
+footer a,
+.terms a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+footer a:hover,
+.terms a:hover {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.social-links:hover {
+  color: var(--primary-color);
+}
+
+
+
+/* Base style for the back-to-top button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  color: var(--tertiary-color);
+  background-color: var(--secondary-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: none; /* Hidden by default */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Show the button when scrolled down */
+:target ~ .back-to-top,
+body:target ~ .back-to-top {
+  display: block;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .back-to-top {
+      content: "↑"; /* Only show an arrow for mobile devices */
+      padding: 10px; /* Adjust padding for mobile */
+      font-size: 12px; /* Slightly larger font size for better visibility on mobile */
+  }
+}
+
+/* Chatbot */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 400px;
+}
+
+.chatbot-content {
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chatbot-messages {
+  min-height: 300px;
+}
+
+.chatbot-input {
+  border: none;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  width: calc(100% - 60px);
+}
+
+.chatbot-send-btn {
+  width: 60px;
+  border: none;
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+}
+
+.chatbot-send-btn:hover {
+  background-color: var(--text-color);
+}
+
+.chatbot-toggle-btn {
+  position: fixed;
+  bottom: 80px; 
+  right: 20px; 
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000; /* To ensure it's above other elements */
+  display: flex;
+  align-items: center;
+}
+
+.chatbot-icon {
+  width: 40px; 
+  height: 40px; 
+  margin-right: 5px; /* Space between icon and text */
+}
+
+.close-chatbot-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.question-link {
+  color: var(--tertiary-color);
+  text-decoration: none;
+  padding-top: 5px;
+  cursor: pointer; /* Show a pointer cursor on hover */
+  margin-bottom: 20px; /* Add space below each link */
+}
+
+.question-link:hover {
+  color: var(--background-color);
+  text-decoration: none;
+  padding-top: 5px;
+  cursor: pointer; /* Show a pointer cursor on hover */
+  margin-bottom: 20px; /* Add space below each link */
+}
+
+
